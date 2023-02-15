@@ -41,7 +41,7 @@ if st.button('Ver notas'):
 
     produtos = {}
 
-    produtos['valor'] = notas.groupby('ncmSh')['valor'].agg(['sum','count']).sort_values(by='sum',ascending=False)
+    produtos['valor'] = notas.groupby(['codigoNcmSh','ncmSh'])['valor'].agg(['sum','count']).sort_values(by='sum',ascending=False)
 
     st.write(produtos['valor'].head(10))
 
