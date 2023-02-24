@@ -16,7 +16,7 @@ quantidade = st.number_input('quantidade')
 
 if st.button('Calcular'):
 
-    notas = pd.read_csv(f'./data/alcool.csv', sep=';', header=0)
+    notas = pd.read_csv('https://raw.githubusercontent.com/amarabuco/mineracaodenotas/main/app/app/data/alcool.csv', sep=';', header=0)
     notas.Produto = notas.Produto.str.upper()
     if produto == 'Alcool Gel 500':
         notas = notas.loc[(notas.Produto.str.find(r'GEL') != -1)&(notas.Produto.str.find(r'500') != -1)&(notas['Unid. Medida'].str.find(r'UN') != -1)]
